@@ -1,0 +1,5 @@
+ssh-keygen -t rsa
+ssh gocdusr@puppet mkdir -p .ssh
+cat .ssh/id_rsa.pub | ssh gocdusr@puppet 'cat >> .ssh/authorized_keys'
+ssh gocdusr@puppet "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
+ssh gocdusr@puppet
